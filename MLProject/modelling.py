@@ -21,8 +21,6 @@ def train(data_file, n_estimators):
     if remote_server_uri:
         mlflow.set_tracking_uri(remote_server_uri)
     
-    mlflow.set_experiment("CI_CD_Churn_Experiment")
-
     #LOAD DATA
     try:
         df = pd.read_csv(data_file)
