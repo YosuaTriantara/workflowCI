@@ -20,8 +20,12 @@ def train(data_file, n_estimators):
     #SETUP DAGSHUB & MLFLOW 
     DAGSHUB_USERNAME = "yosuatriantara"
     DAGSHUB_REPO_NAME = "SMSML_yosuatriantara"
+    token = os.getenv("DAGSHUB_TOKEN")
     
-    # Inisialisasi koneksi remote ke DagsHub
+    if token:
+        dagshub.auth.add_app_token(token)
+        print("DagsHub terautentikasi via token.")
+
     dagshub.init(repo_owner=DAGSHUB_USERNAME, repo_name=DAGSHUB_REPO_NAME, mlflow=True)
     mlflow.set_experiment("CI_CD_Churn_Experiment")
 
