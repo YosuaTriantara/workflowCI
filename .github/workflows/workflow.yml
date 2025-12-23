@@ -80,14 +80,14 @@ jobs:
     - name: Tag Docker Image
       run: |
         LOCAL_IMAGE_NAME="churn-model:local"
-        REMOTE_IMAGE_NAME="${{secrets.DOCKER_USERNAME}}/mlflow-churn-model:latest"
+        REMOTE_IMAGE_NAME="yosuatriantara/mlflow-churn-model:latest"
         
         echo "Tagging image..."
         docker tag "$LOCAL_IMAGE_NAME" "$REMOTE_IMAGE_NAME"
 
     - name: Push Docker Image
       run: |
-        REMOTE_IMAGE_NAME="${{secrets.DOCKER_USERNAME}}/mlflow-churn-model:latest"
+        REMOTE_IMAGE_NAME="yosuatriantara/mlflow-churn-model:latest"
         
         echo "Pushing image..."
         docker push "$REMOTE_IMAGE_NAME"
