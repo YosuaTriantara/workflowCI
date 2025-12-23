@@ -1,0 +1,5 @@
+mlflow==3.8.0
+mlflow_skinny==3.8.0
+mlflow_tracing==3.8.0
+pandas==2.3.3
+scikit_learn==1.8.0
