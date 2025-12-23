@@ -35,8 +35,8 @@ jobs:
         MLFLOW_TRACKING_URI: https://dagshub.com/${{ secrets.DAGSHUB_USERNAME }}/SMSML_yosuatriantara.mlflow
       run: |
         cd MLProject
-        mlflow run --no-conda . -P n_estimators=100
-
+        mlflow run . --env-manager local -P n_estimators=100
+        
     - name: Get latest MLflow run_id
       id: get_run_id
       run: |
