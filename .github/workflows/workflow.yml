@@ -27,7 +27,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install mlflow==2.19.0 mlflow-skinny==2.19.0 pandas scikit-learn numpy dagshub matplotlib seaborn
+        pip uninstall -y mlflow mlflow-skinny mlflow-tracing
+        pip install mlflow==2.19.0 pandas scikit-learn numpy dagshub matplotlib seaborn
 
     - name: Run mlflow project
       env:
