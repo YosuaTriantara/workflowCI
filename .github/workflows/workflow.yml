@@ -26,7 +26,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install mlflow pandas scikit-learn numpy dagshub
+        pip install mlflow==2.19.0 pandas scikit-learn numpy dagshub seaborn matplotlib
 
     - name: Run mlflow project
       env:
@@ -36,7 +36,7 @@ jobs:
       run: |
         cd MLProject
         mlflow run . --env-manager local -P n_estimators=100
-        
+
     - name: Get latest MLflow run_id
       id: get_run_id
       run: |
