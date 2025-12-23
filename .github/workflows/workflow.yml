@@ -55,6 +55,8 @@ jobs:
 
     - name: Build Docker Model
       run: |
+        cd MLProject
+
         LOCAL_IMAGE_NAME="churn-model:local"
         echo "Building Docker image from Run ID: ${{ env.RUN_ID }}"
         
