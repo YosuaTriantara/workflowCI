@@ -1,1 +1,1 @@
-https://hub.docker.com/repositories/yosuatriantara
+https://hub.docker.com/repository/registry-1.docker.io/yosuatriantara/mlflow-churn-model/image-management
